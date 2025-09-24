@@ -42,7 +42,28 @@
           } else { throw new Error('Unexpected response'); }
         } catch (err) {
           console.error(err);
-          alert('Failed to send message. Please try again later.');
+          // Fallback: native POST to FormSubmit (opens a success page)
+          try {
+            form.action = 'https://formsubmit.co/pratishthaverma2000@gmail.com';
+            form.method = 'POST';
+            // Ensure hidden fields exist on the form for native submit
+            const ensureHidden = (name, value) => {
+              let input = form.querySelector(`input[name="${name}"]`);
+              if (!input) {
+                input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = name;
+                form.appendChild(input);
+              }
+              input.value = value;
+            };
+            ensureHidden('_subject', 'New message from portfolio contact form');
+            ensureHidden('_captcha', 'false');
+            ensureHidden('_template', 'box');
+            form.submit();
+          } catch (fallbackErr) {
+            alert('Failed to send message. Please try again later.');
+          }
         } finally {
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send'; }
         }
