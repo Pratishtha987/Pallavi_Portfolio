@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply saved theme early to avoid flash
+      (function(){
+        try {
+          var saved = localStorage.getItem('theme') || 'light';
+          document.documentElement.setAttribute('data-theme', saved);
+        } catch(e) {}
+      })();
+    </script>
+    <title>Pallavi Kumari | Portfolio</title>
+    <link rel="stylesheet" href="/.qodo/portfolio-website/src/css/styles.css" />
+</head>
+<body>
+    <!-- Loading screen -->
+    <div id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <div class="logo">PK</div>
+            <div class="spinner" aria-label="Loading"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Pallavi Kumari" class="profile-img" />
+            <h1>Pallavi Kumari</h1>
+            <p class="subtitle">Frontend Developer · React Enthusiast</p>
+
+            <div class="button-stack">
+                <a class="btn" href="/.qodo/portfolio-website/Pallavi Kumari Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+                <a class="btn btn-outline" href="/.qodo/portfolio-website/Pallavi Kumari Resume.pdf" download>Download</a>
+            </div>
+
+            <ul class="quick-info">
+                <li><span>📍</span> India</li>
+                <li><span>✉️</span> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            </ul>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero animate-on-scroll" aria-label="Introduction">
+                <p class="eyebrow">Hi, I’m</p>
+                <h2 class="hero-title">Pallavi <span class="accent">Kumari</span></h2>
+                <p class="hero-tag">Software Developer</p>
+                <p class="hero-typing" aria-live="polite"><span id="typed"></span></p>
+                <div class="cta-row">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="/.qodo/portfolio-website/Pallavi Kumari Resume.pdf" class="btn btn-outline" download>Download Resume</a>
+                </div>
+                <div class="floating-shapes" aria-hidden="true">
+                    <div class="shape s1"></div>
+                    <div class="shape s2"></div>
+                    <div class="shape s3"></div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="animate-on-scroll">
+                <h2>About Me</h2>
+                <p>
+                    I build responsive, accessible, and performant interfaces with a focus on clean design and maintainable code. I enjoy
+                    solving real-world problems and turning ideas into delightful user experiences.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat"><div class="stat-num">3+ </div><div class="stat-label">Years Experience</div></div>
+                    <div class="stat"><div class="stat-num">10+ </div><div class="stat-label">Projects</div></div>
+                    <div class="stat"><div class="stat-num">Global</div><div class="stat-label">Client Exposure</div></div>
+                </div>
+                <div class="stack-grid">
+                    <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /><span>React</span></div>
+                    <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" /><span>Next.js</span></div>
+                    <div class="stack-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" /><span>Tailwind CSS</span></div>
+                    <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
+                    <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
+                    <div class="stack-item"><img src="../zoho image.png" alt="Zoho" /><span>Zoho</span></div>
+                </div>
+            </section>
+
+            <!-- Projects Section with Filters -->
+            <section id="projects" class="animate-on-scroll">
+                <h2>Projects</h2>
+                <div class="filters" role="tablist" aria-label="Project filters">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button class="filter-btn" data-filter="webapps" role="tab">Web Apps</button>
+                    <button class="filter-btn" data-filter="zoho" role="tab">Zoho</button>
+                    <button class="filter-btn" data-filter="integrations" role="tab">Integrations</button>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card" data-category="webapps">
+                        <img class="project-thumb" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Portfolio screenshot"/>
+                        <h3>Portfolio Website</h3>
+                        <p>Modern personal website with hero, timeline, skills, projects, testimonials, and resume viewer.</p>
+                        <div class="chips">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live</a><a href="#">GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="integrations">
+                        <img class="project-thumb" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Integration app"/>
+                        <h3>Weather App</h3>
+                        <p>Current conditions and 3-day forecast from a public API, with clean UI states and error handling.</p>
+                        <div class="chips">
+                            <span class="chip">API</span>
+                            <span class="chip">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live</a><a href="#">GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="webapps">
+                        <img class="project-thumb" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Todo app"/>
+                        <h3>To‑Do List</h3>
+                        <p>Interactive to‑do with local storage, keyboard shortcuts, and filterable views.</p>
+                        <div class="chips">
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live</a><a href="#">GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="zoho">
+                        <img class="project-thumb" src="../zoho image.png" alt="Zoho"/>
+                        <h3>Zoho Customization</h3>
+                        <p>Automation, workflows, and custom modules delivering measurable ops efficiency.</p>
+                        <div class="chips">
+                            <span class="chip">Zoho</span>
+                            <span class="chip">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Case Study</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Experience Timeline -->
+            <section id="experience" class="animate-on-scroll">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-head">
+                            <h3>Frontend Developer · Example Company</h3>
+                            <span class="meta">Jan 2024 – Present · Remote</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>Shipped reusable UI components and improved LCP by ~30%.</li>
+                            <li>Collaborated with design for pixel-perfect, accessible UIs.</li>
+                            <li>Implemented lighthouse-driven performance improvements.</li>
+                        </ul>
+                        <div class="chips"><span class="chip">React</span><span class="chip">CSS</span><span class="chip">A11y</span></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-head">
+                            <h3>Web Intern · Sample Studio</h3>
+                            <span class="meta">Jun 2023 – Dec 2023 · On-site</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>Built landing pages and forms with client-side validation.</li>
+                            <li>Created CSS utilities that reduced dev time across pages.</li>
+                        </ul>
+                        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">SEO</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials / Recommendations -->
+            <section id="testimonials" class="animate-on-scroll">
+                <h2>Testimonials</h2>
+                <div class="testimonial-carousel" aria-roledescription="carousel">
+                    <button class="carousel-btn prev" aria-label="Previous">‹</button>
+                    <div class="testimonial-track" role="group" aria-live="polite">
+                        <figure class="testimonial">
+                            <blockquote>“Pallavi brings a great mix of design sense and engineering. She delivers fast and cares about details.”</blockquote>
+                            <figcaption>— Client A</figcaption>
+                        </figure>
+                        <figure class="testimonial">
+                            <blockquote>“Reliable, proactive, and a great teammate. She owns problems end‑to‑end.”</blockquote>
+                            <figcaption>— Teammate B</figcaption>
+                        </figure>
+                        <figure class="testimonial">
+                            <blockquote>“Outstanding UI quality and attention to accessibility.”</blockquote>
+                            <figcaption>— Mentor C</figcaption>
+                        </figure>
+                    </div>
+                    <button class="carousel-btn next" aria-label="Next">›</button>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="animate-on-scroll">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <div class="chips">
+                            <span class="chip">HTML5</span>
+                            <span class="chip">CSS3</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Frontend</h3>
+                        <div class="chips">
+                            <span class="chip">React</span>
+                            <span class="chip">Next.js</span>
+                            <span class="chip">Tailwind</span>
+                            <span class="chip">Accessibility</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Tools</h3>
+                        <div class="chips">
+                            <span class="chip">Git</span>
+                            <span class="chip">GitHub</span>
+                            <span class="chip">VS Code</span>
+                            <span class="chip">Zoho</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Soft Skills</h3>
+                        <div class="chips">
+                            <span class="chip">Communication</span>
+                            <span class="chip">Teamwork</span>
+                            <span class="chip">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="animate-on-scroll">
+                <h2>Education</h2>
+                <div class="edu-list">
+                    <div class="edu-item">
+                        <div class="edu-head">
+                            <h3>B.Tech in Computer Science</h3>
+                            <span class="meta">Year · University/Institute</span>
+                        </div>
+                        <p class="muted">Relevant coursework: DSA, Web Technologies, Databases.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- Contact -->
+            <section id="contact" class="animate-on-scroll">
+                <h2>Let’s work together 🚀</h2>
+                <div class="contact-cta">
+                    <a class="btn" href="mailto:your.email@example.com">Email</a>
+                    <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                    <a class="btn btn-outline" href="https://github.com/" target="_blank">GitHub</a>
+                    <a class="btn btn-outline" href="/.qodo/portfolio-website/Pallavi Kumari Resume.pdf" target="_blank">Resume</a>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 Pallavi Kumari. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/.qodo/portfolio-website/src/js/main.js"></script>
+</body>
+</html>
